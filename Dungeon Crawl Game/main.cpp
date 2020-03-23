@@ -8,29 +8,27 @@
 
 using namespace std;
 
-
-
-int run(int score) {
-	//Init the map
-	Map newMap;
-	Player newPlayer;
-	newMap.setMap(score);
-	newMap.printMap(newMap.getMap(), score);
-
-	if (newPlayer.movePlayer(_getch(), newMap, score) == false) {
-		cout << "You hit a trap!";
-		_getch();
-		return 0;
-	} else {
-		run(++score);
-	}
-
-}
-
 int main() {
 	srand(time(NULL));
 	int score = 0;
-	run(score);
+	bool* isRunning = new bool;
 
+	Map* newMap = new Map;
+	newMap->setMap(score);
+
+	Player newPlayer;
+
+	*isRunning = true;
+	while (*isRunning == true) {
+
+		newMap->printMap(newMap->getMap(), score);
+		if (newPlayer.movePlayer(_getch(), newMap, score, isRunning) == true) {
+			newMap = new Map;
+			newMap->setMap(++score);
+		}
+	}
+
+	cout << "You hit a trap!";
+	_getch();
 	return 0;
 }

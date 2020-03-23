@@ -9,8 +9,8 @@
 #include <cmath>
 
 
-const int mapWidth = 10;
-const int mapHeight = 10;
+const int mapWidth = 15;
+const int mapHeight = 15;
 
 using namespace std;
 

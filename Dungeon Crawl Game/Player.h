@@ -15,9 +15,8 @@ using namespace std;
 class Player {
 public:
 	
-	bool movePlayer(char direction, Map newMap, int score);
-	bool checkMove(vector<int> playerLocation, vector< vector<char> > dungeonMap);
-	bool checkTrap(vector<int> playerLocation, vector< vector<char> > dungeonMap);
+	bool movePlayer(char direction, Map* newMap, int score, bool* isRunning);
+	bool checkMove(vector<int> playerLocation, vector< vector<char> > dungeonMap, bool* isRunning);
 	//int convertPlayerPos(int playerPos);
 	int getPlayerPos(Map newMap); // retrive players origin position.
 

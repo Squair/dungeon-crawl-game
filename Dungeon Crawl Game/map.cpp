@@ -54,7 +54,7 @@ void Map::printMap(vector< vector<char> > dungeonMap, int score) {
 		cout << endl; //To seperate the map into visual rows.
 	}
 	cout << "Score: " << score << endl; //Print out players score.
-	Sleep(50); //Add a little latency to reduce cpu usage.
+	Sleep(0); //Add a little latency to reduce cpu usage.
 }
 
 vector<int> Map::getPlayerLocation() { //Returns the current location of the player.
